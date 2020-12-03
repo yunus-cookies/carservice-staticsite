@@ -31,13 +31,6 @@ const IndexPage = () => {
           handleMultipleOnClick={handleMultipleOnClick}
           {...homeObjTwo}
         />
-        <div
-          style={{
-            borderTop: "2px solid #fff",
-            margin: "0 auto",
-            width: "10%",
-          }}
-        ></div>
       </Layout>
       <Portal>
         <Modal

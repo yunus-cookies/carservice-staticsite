@@ -15,7 +15,7 @@ const Services = () => {
         <ServiceContainer>
           <ServiceRow>
             <ServiceCol>
-              <ServiceWrapper style={{ transform: "scale(1.2)" }}>
+              <ServiceWrapper>
                 <h3>Ydelse 1</h3>
                 <p>Hellooo det her er ydelse 1. Meget god ydelse.</p>
                 <Button>Kontakt os</Button>
@@ -29,7 +29,7 @@ const Services = () => {
               </ServiceWrapper>
             </ServiceCol>
             <ServiceCol>
-              <ServiceWrapper style={{ transform: "scale(1.2)" }}>
+              <ServiceWrapper>
                 <h3>Ydelse 3</h3>
                 <p>Hellooo det her er ydelse 3. Meget god ydelse.</p>
                 <Button>Kontakt os</Button>

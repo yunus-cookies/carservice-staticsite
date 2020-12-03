@@ -59,7 +59,7 @@ const HeroSection = ({
     query {
       placeholderImage: file(relativePath: { eq: "png-1.png" }) {
         childImageSharp {
-          fluid(maxWidth: 3000) {
+          fluid {
             ...GatsbyImageSharpFluid
           }
         }

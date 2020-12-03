@@ -12,11 +12,6 @@ body {
   background-image: linear-gradient(200deg, #537895 0%, #c2e9fb 100%);
 }
 
-.main {
-  border-radius: 8px;
-  margin: 50px;
-}
-
 .btn {
   padding: 8px 20px;
   border-radius: 4px;
