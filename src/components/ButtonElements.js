@@ -22,7 +22,19 @@ export const Button = styled.button`
       }
     `}
   ${props =>
-    props.outline &&
+    props.outlineBlack &&
+    css`
+      background-color: transparent;
+      color: #242424;
+      padding: 8px 20px;
+      border: 1px solid #242424;
+      transition: all 0.3s ease-out;
+      &:hover {
+        border: 1px solid #f00946;
+      }
+    `}
+    ${props =>
+    props.outlineWhite &&
     css`
       background-color: transparent;
       color: #fff;

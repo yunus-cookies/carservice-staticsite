@@ -1,5 +1,4 @@
-import { Link } from "gatsby"
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 
 export const Spinner = styled.div`
   content: " ";
@@ -54,12 +53,6 @@ export const InfoBox = styled.div`
     p {
       font-size: 1rem;
     }
-  }
-`
-
-export const ContactContainer = styled.div`
-  width: 100%;
-  @media screen and (max-width: 991px) {
   }
 `
 

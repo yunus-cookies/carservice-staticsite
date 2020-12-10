@@ -3,9 +3,10 @@ import { GiAutoRepair } from "react-icons/gi"
 import styled, { css } from "styled-components"
 
 export const Nav = styled.nav`
-  background-color: ${({ isScroll }) =>
-    isScroll ? "rgba(36, 36, 36, 0.9)" : "transparent"};
+  background-color: #fff;
   height: 80px;
+  box-shadow: ${({ isScroll }) =>
+    isScroll ? "0 2px 2px -2px rgba(0, 0, 0, 0.75)" : null};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,7 +15,7 @@ export const Nav = styled.nav`
   width: 100%;
   top: 0;
   z-index: 99;
-  transition: all 0.5s ease;
+  transition: all 0.25s ease;
 
   @media screen and (max-width: 991px) {
     background-color: ${({ isClick, isScroll }) =>
@@ -44,7 +45,7 @@ export const NavContainer = styled.div`
     `}
 `
 export const NavLogo = styled(Link)`
-  color: #fff;
+  color: #242424;
   justify-self: start;
   cursor: pointer;
   text-decoration: none;
@@ -101,9 +102,7 @@ export const NavItem = styled.li`
   }
 `
 
-export const NavButton = styled.li`
-  margin-left: 30px;
-
+export const NavButtonContainer = styled.li`
   @media screen and (max-width: 991px) {
     display: flex;
     justify-content: center;
@@ -113,23 +112,14 @@ export const NavButton = styled.li`
   }
 `
 
-export const NavButtonLink = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
+export const NavButton = styled.div`
   padding: 8px 16px;
   height: 100%;
   width: 80%;
-  @media screen and (max-width: 991px) {
-    .btn-link {
-      padding: 0;
-    }
-  }
 `
 
 export const NavLink = styled(Link)`
-  color: #fff;
+  color: #242424;
   display: flex;
   align-items: center;
   text-decoration: none;

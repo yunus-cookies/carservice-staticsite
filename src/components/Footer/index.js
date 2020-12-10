@@ -1,7 +1,4 @@
 import React from "react"
-import { FaPhone, FaAddressBook } from "react-icons/fa"
-import { BsDot } from "react-icons/bs"
-import { IoMdMail } from "react-icons/io"
 import {
   FooterContainer,
   FooterSection,

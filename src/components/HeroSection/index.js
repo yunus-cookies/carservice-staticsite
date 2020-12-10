@@ -1,63 +1,47 @@
-import React, { useState, useEffect } from "react"
-import { Button } from "../ButtonElements"
-import { AnimatePresence } from "framer-motion"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import React from "react"
+import { homeObjOne, homeObjTwo } from "../../utils/Data_HeroSection"
+import { Home__HeroSection, HeroContainer } from "./HeroSectionElements"
+import HeroRows from "./HeroRows"
 
-import {
-  Home__HeroSection,
-  HeroContainer,
-  HeroSectionRow,
-  HeroSectionCol,
-  HeroSectionWrapper,
-  TopLine,
-  Heading,
-  Subtitle,
-  ImgWrapper,
-  StyledBackground,
-  Overlay,
-} from "./HeroSectionElements"
-import Portal from "../Portal"
-import Modal from "../Modal"
-import Contact from "../Contact"
-
-const HeroSection = ({
-  blueBg,
-  topLine,
-  headline,
-  description,
-  buttonLabel,
-  imgStart,
-  lightText,
-  img,
-  handleMultipleOnClick,
-}) => {
-  const [button, setButton] = useState(true)
-
-  const [click, setClick] = useState(false)
-
-  const showButton = () => {
-    if (window.innerWidth <= 991) {
-      setButton(false)
-    } else {
-      setButton(true)
-    }
+const HeroSection = ({ handleMultipleOnClick }) => {
+  const TOP_STYLE = {
+    borderRadius: "30px 30px 0 0",
   }
-  const handleClick = () => {
-    setClick(!click)
+  const TOP_IMG_STYLE = {
+    borderRadius: "0 30px 0 0",
   }
-
-  useEffect(() => {
-    showButton()
-    window.addEventListener("resize", showButton)
-    return () => {
-      window.removeEventListener("resize", showButton)
-    }
-  }, [])
+  const BOTTOM_STYLE = {
+    borderRadius: "0 0 30px 30px",
+  }
+  const BOTTOM_IMG_STYLE = {
+    borderRadius: "0 0 0 30px",
+  }
 
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "png-1.png" }) {
+      placeholderImage1: file(relativePath: { eq: "image1.jpg" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      placeholderImage2: file(relativePath: { eq: "image2.jpg" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      placeholderImage3: file(relativePath: { eq: "image3.jpg" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      placeholderImage4: file(relativePath: { eq: "image4.jpg" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
@@ -69,53 +53,52 @@ const HeroSection = ({
 
   return (
     <>
-      <Home__HeroSection isBlueBg={blueBg}>
+      <Home__HeroSection isBlueBg={homeObjTwo.blueBg}>
         <HeroContainer>
-          <AnimatePresence>
-            <HeroSectionRow
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              onClick={handleClick}
-              isImgStart={imgStart}
-            >
-              <HeroSectionCol
-                initial={{ x: -500 }}
-                animate={{ x: 0 }}
-                transition={{ delay: 0.2 }}
-              >
-                <HeroSectionWrapper>
-                  <TopLine isLightText={lightText}>{topLine}</TopLine>
-                  <Heading isLightText={lightText}>{headline}</Heading>
-                  <Subtitle isLightText={lightText}>{description}</Subtitle>
-                  {button ? (
-                    <div>
-                      <Button primary nav onClick={handleMultipleOnClick}>
-                        {buttonLabel}
-                      </Button>
-                    </div>
-                  ) : (
-                    <div>
-                      <Button mobile blue onClick={handleMultipleOnClick}>
-                        {buttonLabel}
-                      </Button>
-                    </div>
-                  )}
-                </HeroSectionWrapper>
-              </HeroSectionCol>
-              <HeroSectionCol
-                initial={{ x: 500 }}
-                animate={{ x: 0 }}
-                transition={{ delay: 0.2 }}
-              >
-                <ImgWrapper>
-                  <Img
-                    fluid={data.placeholderImage.childImageSharp.fluid}
-                    fadeIn
-                  />
-                </ImgWrapper>
-              </HeroSectionCol>
-            </HeroSectionRow>
-          </AnimatePresence>
+          <HeroRows
+            ImgStart={homeObjOne.imgStart}
+            lightText={homeObjOne.lightText}
+            topline={homeObjOne.topLine}
+            headline={homeObjOne.headline}
+            description={homeObjOne.description}
+            buttonLabel={homeObjOne.buttonLabel}
+            handleMultipleOnClick={handleMultipleOnClick}
+            styles={TOP_STYLE}
+            imgStyles={TOP_IMG_STYLE}
+            image={data.placeholderImage1.childImageSharp.fluid}
+          />
+          <HeroRows
+            ImgStart={homeObjTwo.imgStart}
+            lightText={homeObjTwo.lightText}
+            topline={homeObjTwo.topLine}
+            headline={homeObjTwo.headline}
+            description={homeObjTwo.description}
+            buttonLabel={homeObjTwo.buttonLabel}
+            handleMultipleOnClick={handleMultipleOnClick}
+            image={data.placeholderImage2.childImageSharp.fluid}
+          />
+          <HeroRows
+            ImgStart={homeObjOne.imgStart}
+            lightText={homeObjOne.lightText}
+            topline={homeObjOne.topLine}
+            headline={homeObjOne.headline}
+            description={homeObjOne.description}
+            buttonLabel={homeObjOne.buttonLabel}
+            handleMultipleOnClick={handleMultipleOnClick}
+            image={data.placeholderImage3.childImageSharp.fluid}
+          />
+          <HeroRows
+            ImgStart={homeObjTwo.imgStart}
+            lightText={homeObjTwo.lightText}
+            topline={homeObjTwo.topLine}
+            headline={homeObjTwo.headline}
+            description={homeObjTwo.description}
+            buttonLabel={homeObjTwo.buttonLabel}
+            handleMultipleOnClick={handleMultipleOnClick}
+            styles={BOTTOM_STYLE}
+            imgStyles={BOTTOM_IMG_STYLE}
+            image={data.placeholderImage4.childImageSharp.fluid}
+          />
         </HeroContainer>
       </Home__HeroSection>
     </>

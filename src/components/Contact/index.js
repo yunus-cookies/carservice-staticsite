@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState } from "react"
 import { FaPhone, FaAddressBook } from "react-icons/fa"
 import { IoMdMail } from "react-icons/io"
 import {
-  ContactContainer,
   ContactSection,
   ContactWrapper,
   ContactForm,

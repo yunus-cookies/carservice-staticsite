@@ -11,13 +11,10 @@ import {
   NavLink,
   NavLogo,
   NavMenu,
+  NavButtonContainer,
   NavButton,
-  NavButtonLink,
 } from "./NavbarElements"
 import { Button } from "../ButtonElements"
-import Portal from "../Portal"
-import Modal from "../Modal"
-import Contact from "../Contact"
 
 const Navbar = ({ handleMultipleOnClick }) => {
   const [click, setClick] = useState(false)
@@ -55,7 +52,7 @@ const Navbar = ({ handleMultipleOnClick }) => {
 
   return (
     <>
-      <IconContext.Provider value={{ color: "#fff" }}>
+      <IconContext.Provider value={{ color: "#242424" }}>
         <Nav isScroll={scroll} isClick={click}>
           <NavContainer container>
             <NavLogo to="/" onClick={closeMobileMenu}>
@@ -73,26 +70,26 @@ const Navbar = ({ handleMultipleOnClick }) => {
               <NavItem>
                 <NavLink to="service">Ydelser</NavLink>
               </NavItem>
-              <NavButton>
+              <NavButtonContainer>
                 {button ? (
-                  <NavButtonLink>
-                    <Button outline nav onClick={handleMultipleOnClick}>
+                  <NavButton>
+                    <Button primary nav onClick={handleMultipleOnClick}>
                       KONTAKT OS
                     </Button>
-                  </NavButtonLink>
+                  </NavButton>
                 ) : (
-                  <NavButtonLink>
+                  <NavButton>
                     <Button
-                      outline
+                      outlineWhite
                       mobile
                       outlineNav
                       onClick={handleMultipleOnClick}
                     >
                       KONTAKT OS
                     </Button>
-                  </NavButtonLink>
+                  </NavButton>
                 )}
-              </NavButton>
+              </NavButtonContainer>
             </NavMenu>
           </NavContainer>
         </Nav>

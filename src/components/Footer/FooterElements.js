@@ -30,6 +30,8 @@ export const FooterRights = styled.small`
   color: #fff;
   font-size: 12px;
   transition: 0.5s;
+  display: flex;
+  align-items: center;
   &:hover {
     transform: scale(1.05);
     transition: 0.5s;
@@ -43,15 +45,16 @@ export const Icon = styled(GiAutoRepair)`
   color: #fff;
   font-size: 1.5rem;
   margin-right: 5px;
+  margin-left: 5px;
 `
 
 export const WebsiteName = styled(Link)`
   margin: 5px 0;
   text-decoration: none;
   color: #fff;
-  font-size: 1.4rem;
+  font-size: 1rem;
   display: flex;
-  width: 210px;
+  align-items: center;
 `
 export const FooterSocialIcons = styled.div`
   display: flex;

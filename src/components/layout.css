@@ -4,12 +4,16 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "PT Sans", sans-serif;
+  font-family: "Courier New", monospace;
 }
 
 body {
   /* #537895 */
-  background-image: linear-gradient(200deg, #537895 0%, #c2e9fb 100%);
+  background-color: #fff;
+}
+
+.main {
+  margin-top: 100px;
 }
 
 .btn {

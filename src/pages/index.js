@@ -3,8 +3,6 @@ import React, { useState } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import HeroSection from "../components/HeroSection"
-import { homeObjTwo, homeObjThree } from "../utils/Data_HeroSection"
-import Services from "../components/Services"
 import Portal from "../components/Portal"
 import Modal from "../components/Modal"
 import Contact from "../components/Contact"
@@ -27,10 +25,7 @@ const IndexPage = () => {
     <>
       <Layout handleMultipleOnClick={handleMultipleOnClick}>
         <SEO title="Home" />
-        <HeroSection
-          handleMultipleOnClick={handleMultipleOnClick}
-          {...homeObjTwo}
-        />
+        <HeroSection handleMultipleOnClick={handleMultipleOnClick} />
       </Layout>
       <Portal>
         <Modal
