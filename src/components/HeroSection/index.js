@@ -1,21 +1,39 @@
 import { useStaticQuery, graphql } from "gatsby"
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { homeObjOne, homeObjTwo } from "../../utils/Data_HeroSection"
 import { Home__HeroSection, HeroContainer } from "./HeroSectionElements"
-import HeroRows from "./HeroRows"
+import HeroRow from "./HeroRow"
 
 const HeroSection = ({ handleMultipleOnClick }) => {
+  const [resize, setResize] = useState(true)
+
+  const isResized = () => {
+    if (window.innerWidth <= 991) {
+      setResize(false)
+    } else {
+      setResize(true)
+    }
+  }
+
+  useEffect(() => {
+    isResized()
+    window.addEventListener("resize", isResized)
+    return () => {
+      window.removeEventListener("resize", isResized)
+    }
+  }, [])
+
   const TOP_STYLE = {
-    borderRadius: "30px 30px 0 0",
+    borderRadius: "25px 25px 0 0",
   }
   const TOP_IMG_STYLE = {
-    borderRadius: "0 30px 0 0",
+    borderRadius: resize ? "0 25px 0 0" : "0 0 0 0",
   }
   const BOTTOM_STYLE = {
-    borderRadius: "0 0 30px 30px",
+    borderRadius: "0 0 25px 25px",
   }
   const BOTTOM_IMG_STYLE = {
-    borderRadius: "0 0 0 30px",
+    borderRadius: resize ? "0 0 0 25px" : "0 0 25px 25px",
   }
 
   const data = useStaticQuery(graphql`
@@ -55,7 +73,7 @@ const HeroSection = ({ handleMultipleOnClick }) => {
     <>
       <Home__HeroSection isBlueBg={homeObjTwo.blueBg}>
         <HeroContainer>
-          <HeroRows
+          <HeroRow
             ImgStart={homeObjOne.imgStart}
             lightText={homeObjOne.lightText}
             topline={homeObjOne.topLine}
@@ -67,7 +85,7 @@ const HeroSection = ({ handleMultipleOnClick }) => {
             imgStyles={TOP_IMG_STYLE}
             image={data.placeholderImage1.childImageSharp.fluid}
           />
-          <HeroRows
+          <HeroRow
             ImgStart={homeObjTwo.imgStart}
             lightText={homeObjTwo.lightText}
             topline={homeObjTwo.topLine}
@@ -77,7 +95,7 @@ const HeroSection = ({ handleMultipleOnClick }) => {
             handleMultipleOnClick={handleMultipleOnClick}
             image={data.placeholderImage2.childImageSharp.fluid}
           />
-          <HeroRows
+          <HeroRow
             ImgStart={homeObjOne.imgStart}
             lightText={homeObjOne.lightText}
             topline={homeObjOne.topLine}
@@ -87,7 +105,7 @@ const HeroSection = ({ handleMultipleOnClick }) => {
             handleMultipleOnClick={handleMultipleOnClick}
             image={data.placeholderImage3.childImageSharp.fluid}
           />
-          <HeroRows
+          <HeroRow
             ImgStart={homeObjTwo.imgStart}
             lightText={homeObjTwo.lightText}
             topline={homeObjTwo.topLine}

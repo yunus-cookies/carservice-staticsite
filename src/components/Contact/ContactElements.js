@@ -66,21 +66,14 @@ export const HeaderWrap = styled.div`
   display: flex;
   p {
     width: 90%;
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 20px;
   }
   h1 {
     width: 90%;
-    font-size: 3rem;
-    margin-bottom: 20px;
-  }
-  @media screen and (max-width: 1200px) {
-    p {
-      font-size: 1.5rem;
-    }
-    h1 {
-      font-size: 2rem;
-    }
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 25px;
   }
   @media screen and (max-width: 991px) {
     width: 100%;

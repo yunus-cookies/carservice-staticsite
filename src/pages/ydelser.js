@@ -1,19 +1,18 @@
 import React from "react"
+import HeroSection from "../components/HeroSection"
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import HeroSection from "../components/HeroSection"
-import About from "../components/About"
 
-const IndexPage = () => {
+const ServicesPage = () => {
   return (
     <>
       <Layout>
-        <SEO title="Home" />
+        <SEO title="Page two" />
         <HeroSection />
-        <About />
       </Layout>
     </>
   )
 }
 
-export default IndexPage
+export default ServicesPage

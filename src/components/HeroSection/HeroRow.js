@@ -11,7 +11,7 @@ import {
   ImgWrapper,
 } from "./HeroSectionElements"
 
-const HeroRows = ({
+const HeroRow = ({
   handleMultipleOnClick,
   lightText,
   topline,
@@ -54,7 +54,7 @@ const HeroRows = ({
                 {buttonLabel}
               </Button>
             ) : (
-              <Button mobile blue onClick={handleMultipleOnClick}>
+              <Button mobile outlineWhite onClick={handleMultipleOnClick}>
                 {buttonLabel}
               </Button>
             )}
@@ -70,4 +70,4 @@ const HeroRows = ({
   )
 }
 
-export default HeroRows
+export default HeroRow

@@ -56,36 +56,3 @@ export const WebsiteName = styled(Link)`
   display: flex;
   align-items: center;
 `
-export const FooterSocialIcons = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100px;
-  transition: 0.5s;
-  p {
-    color: #fff;
-    font-size: 1.2rem;
-  }
-  @media screen and (max-width: 991px) {
-    width: 50%;
-    flex-direction: column;
-  }
-`
-
-export const IconInfo = styled.div`
-  color: #fff;
-  display: flex;
-  align-items: center;
-  font-size: 1.1rem;
-  padding: 20px 0;
-  margin: 0 10px;
-  transition: 0.5s;
-  &:hover {
-    transform: scale(1.05);
-    transition: 0.5s;
-  }
-  * {
-    margin: 0 5px;
-  }
-`

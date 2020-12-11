@@ -1,6 +1,6 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 
-<p>This is a small project build for a car mechanic company. It's build with Gatsbyjs and styled-components. Also it's using formspree to handle the contact post request.</p>
+<p>This is a small project build for a car mechanic company. It's build with Gatsbyjs, styled-components and a little framer-motion to help with some page animation. Also it's using formspree to handle the contact post request.</p>
 <p>So far the project is still in development, so their is still some redundant and unfinished code here and there. Bear with me. Otherwise download the rep and enjoy this bad boy.</p>
 
 ## 🚀 How to run

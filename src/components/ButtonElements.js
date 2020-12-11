@@ -70,7 +70,7 @@ export const Button = styled.button`
   ${props =>
     props.mobile &&
     css`
-      background-color: #242424;
+      background-color: transparent;
       color: #fff;
       text-align: center;
       border-radius: 4px;
@@ -78,7 +78,6 @@ export const Button = styled.button`
       text-decoration: none;
       font-size: 1.5rem;
       padding: 14px 20px;
-      border: none;
       transition: all 0.3s ease-out;
       &:hover {
         background-color: #f00946;

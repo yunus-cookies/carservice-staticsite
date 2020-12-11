@@ -7,11 +7,6 @@
   font-family: "Courier New", monospace;
 }
 
-body {
-  /* #537895 */
-  background-color: #fff;
-}
-
 .main {
   margin-top: 100px;
 }

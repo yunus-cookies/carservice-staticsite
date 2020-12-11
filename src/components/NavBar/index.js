@@ -52,48 +52,46 @@ const Navbar = ({ handleMultipleOnClick }) => {
 
   return (
     <>
-      <IconContext.Provider value={{ color: "#242424" }}>
-        <Nav isScroll={scroll} isClick={click}>
-          <NavContainer container>
-            <NavLogo to="/" onClick={closeMobileMenu}>
-              <NavIcon />
-              <p>A.J Autoservice</p>
-            </NavLogo>
-            <MobileIcon onClick={handleClick}>
-              {click ? <FaTimes /> : <RiMenu3Line />}
-            </MobileIcon>
-            <NavMenu isClick={click} active>
-              <NavItem>
-                <NavLink to="om">Om</NavLink>
-                {click}
-              </NavItem>
-              <NavItem>
-                <NavLink to="service">Ydelser</NavLink>
-              </NavItem>
-              <NavButtonContainer>
-                {button ? (
-                  <NavButton>
-                    <Button primary nav onClick={handleMultipleOnClick}>
-                      KONTAKT OS
-                    </Button>
-                  </NavButton>
-                ) : (
-                  <NavButton>
-                    <Button
-                      outlineWhite
-                      mobile
-                      outlineNav
-                      onClick={handleMultipleOnClick}
-                    >
-                      KONTAKT OS
-                    </Button>
-                  </NavButton>
-                )}
-              </NavButtonContainer>
-            </NavMenu>
-          </NavContainer>
-        </Nav>
-      </IconContext.Provider>
+      <Nav isScroll={scroll} isClick={click}>
+        <NavContainer container>
+          <NavLogo to="/" click={click} onClick={closeMobileMenu}>
+            <NavIcon click={click} />
+            <p>A.J Autoservice</p>
+          </NavLogo>
+          <MobileIcon onClick={handleClick}>
+            {click ? <FaTimes style={{ color: "#fff" }} /> : <RiMenu3Line />}
+          </MobileIcon>
+          <NavMenu isClick={click} active>
+            <NavItem>
+              <NavLink to="/om">Om</NavLink>
+              {click}
+            </NavItem>
+            <NavItem>
+              <NavLink to="/ydelser">Ydelser</NavLink>
+            </NavItem>
+            <NavButtonContainer>
+              {button ? (
+                <NavButton>
+                  <Button primary nav onClick={handleMultipleOnClick}>
+                    KONTAKT OS
+                  </Button>
+                </NavButton>
+              ) : (
+                <NavButton>
+                  <Button
+                    outlineWhite
+                    mobile
+                    outlineNav
+                    onClick={handleMultipleOnClick}
+                  >
+                    KONTAKT OS
+                  </Button>
+                </NavButton>
+              )}
+            </NavButtonContainer>
+          </NavMenu>
+        </NavContainer>
+      </Nav>
     </>
   )
 }

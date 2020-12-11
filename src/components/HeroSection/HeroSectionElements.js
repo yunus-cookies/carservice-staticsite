@@ -12,11 +12,6 @@ export const HeroContainer = styled.div`
   margin-right: auto;
   margin-left: auto;
   max-width: 1440px;
-
-  @media screen and (max-width: 991px) {
-    padding-right: 30px;
-    padding-left: 30px;
-  }
 `
 export const HeroSectionRow = styled.div`
   display: flex;
@@ -25,6 +20,7 @@ export const HeroSectionRow = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+
   flex-wrap: wrap;
   align-content: stretch;
   background-color: ${({ isImgStart }) => (isImgStart ? "#26629f" : "#242424")};
@@ -42,6 +38,9 @@ export const HeroSectionCol = styled.div`
 `
 export const HeroSectionWrapper = styled.div`
   padding: 0 50px 0 50px;
+  @media screen and (max-width: 1200px) {
+    padding: 0 16px 0 16px;
+  }
   @media screen and (max-width: 991px) {
     max-width: 100%;
     border: none;
@@ -57,6 +56,9 @@ export const TopLine = styled.div`
   text-transform: uppercase;
   margin-bottom: 20px;
   border-radius: 4px;
+  @media screen and (max-width: 1200px) {
+    margin-bottom: 10px;
+  }
   ${props =>
     props.isLightText &&
     css`
@@ -65,18 +67,12 @@ export const TopLine = styled.div`
 `
 export const Heading = styled.h1`
   margin-bottom: 24px;
-  font-size: 25px;
+  font-size: 35px;
   line-height: 1.1;
-  font-weight: 600;
+  font-weight: 400;
   color: rgba(36, 36, 36, 0.75);
-  @media screen and (max-width: 1800px) {
-    font-size: 50px;
-  }
-  @media screen and (max-width: 1150px) {
-    font-size: 40px;
-  }
-  @media screen and (max-width: 601px) {
-    font-size: 30px;
+  @media screen and (max-width: 991px) {
+    font-size: 25px;
   }
   ${props =>
     props.isLightText &&
@@ -90,6 +86,9 @@ export const Subtitle = styled.p`
   font-size: 17px;
   line-height: 24px;
   color: rgba(36, 36, 36, 0.8);
+  @media screen and (max-width: 1200px) {
+    margin-bottom: 25px;
+  }
   ${props =>
     props.isLightText &&
     css`
