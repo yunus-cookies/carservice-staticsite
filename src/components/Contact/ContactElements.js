@@ -10,7 +10,6 @@ export const Spinner = styled.div`
   border: 6px solid #fff;
   border-color: #fff transparent #fff transparent;
   animation: lds-dual-ring 1.2s linear infinite;
-
   @keyframes lds-dual-ring {
     0% {
       transform: rotate(0deg);
@@ -118,7 +117,6 @@ export const ContactForm = styled.form`
   background: #fff;
   padding: 25px;
   margin: 0 auto;
-
   @media screen and (min-width: 991px) {
   }
 `
@@ -170,7 +168,6 @@ export const Submit = styled.button`
   font-size: 2rem;
   transition: 0.3s all ease;
   margin: 0 auto;
-
   &:hover {
     background-color: #f00946;
     transition: 0.3s all ease;

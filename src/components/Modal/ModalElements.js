@@ -72,8 +72,8 @@ export const Exit = styled(FaTimes)`
   opacity: 1;
   cursor: pointer;
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: 15px;
+  top: 15px;
   width: 40px;
   transition: ease 0.5s all;
   color: #fff;

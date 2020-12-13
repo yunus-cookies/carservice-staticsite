@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, Children, cloneElement } from "react"
 import PropTypes from "prop-types"
 import "./layout.css"
 import Navbar from "./NavBar"
@@ -21,8 +21,8 @@ const Layout = ({ children }) => {
     setOpen(true)
     setControlModal(true)
   }
-  const childrenWithProps = React.Children.map(children, child => {
-    return React.cloneElement(child, { handleMultipleOnClick })
+  const childrenWithProps = Children.map(children, child => {
+    return cloneElement(child, { handleMultipleOnClick })
   })
 
   return (
@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
           transition={{ duration: 0.4 }}
         >
           <Navbar handleMultipleOnClick={handleMultipleOnClick} />
-          <main className="main">{childrenWithProps}</main>
+          <main>{childrenWithProps}</main>
           <Footer />
         </motion.div>
       </AnimatePresence>

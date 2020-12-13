@@ -1,6 +1,5 @@
 import React from "react"
-import HeroSection from "../components/HeroSection"
-
+import ServiceSection from "../components/ServiceSection"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -8,8 +7,8 @@ const ServicesPage = () => {
   return (
     <>
       <Layout>
-        <SEO title="Page two" />
-        <HeroSection />
+        <SEO title="Ydelser" />
+        <ServiceSection />
       </Layout>
     </>
   )

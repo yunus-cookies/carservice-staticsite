@@ -2,16 +2,16 @@ import React, { useState, useEffect } from "react"
 import { Button } from "../ButtonElements"
 import Img from "gatsby-image"
 import {
-  HeroSectionRow,
-  HeroSectionCol,
-  HeroSectionWrapper,
+  ServiceSectionRow,
+  ServiceSectionCol,
+  ServiceSectionWrapper,
   TopLine,
   Heading,
   Subtitle,
   ImgWrapper,
-} from "./HeroSectionElements"
+} from "./ServiceSectionElements"
 
-const HeroRow = ({
+const Service = ({
   handleMultipleOnClick,
   lightText,
   topline,
@@ -43,9 +43,9 @@ const HeroRow = ({
 
   return (
     <>
-      <HeroSectionRow isImgStart={ImgStart} style={styles}>
-        <HeroSectionCol>
-          <HeroSectionWrapper>
+      <ServiceSectionRow isImgStart={ImgStart} style={styles}>
+        <ServiceSectionCol>
+          <ServiceSectionWrapper>
             <TopLine isLightText={lightText}>{topline}</TopLine>
             <Heading isLightText={lightText}>{headline}</Heading>
             <Subtitle isLightText={lightText}>{description}</Subtitle>
@@ -58,16 +58,16 @@ const HeroRow = ({
                 {buttonLabel}
               </Button>
             )}
-          </HeroSectionWrapper>
-        </HeroSectionCol>
-        <HeroSectionCol>
+          </ServiceSectionWrapper>
+        </ServiceSectionCol>
+        <ServiceSectionCol>
           <ImgWrapper>
             <Img fluid={image} imgStyle={imgStyles} fadeIn />
           </ImgWrapper>
-        </HeroSectionCol>
-      </HeroSectionRow>
+        </ServiceSectionCol>
+      </ServiceSectionRow>
     </>
   )
 }
 
-export default HeroRow
+export default Service

@@ -1,8 +1,9 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import HeroSection from "../components/HeroSection"
+import ServiceSection from "../components/ServiceSection"
 import About from "../components/About"
+import HeroSection from "../components/HeroSection"
 
 const IndexPage = () => {
   return (
@@ -10,6 +11,7 @@ const IndexPage = () => {
       <Layout>
         <SEO title="Home" />
         <HeroSection />
+        <ServiceSection />
         <About />
       </Layout>
     </>

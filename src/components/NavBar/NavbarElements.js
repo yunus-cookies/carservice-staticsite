@@ -18,10 +18,7 @@ export const Nav = styled.nav`
   transition: all 0.25s ease;
 
   @media screen and (max-width: 991px) {
-    box-shadow: ${({ isScroll }) =>
-      isScroll ? "0 2px 2px -2px rgba(0, 0, 0, 0.75)" : null};
-    background-color: ${({ isClick, isScroll }) =>
-      !isClick && !isScroll ? "#fff" : isClick ? "#242424" : "#fff"};
+    background-color: ${({ isClick }) => (isClick ? "#242424" : "#fff")};
   }
 `
 
@@ -51,7 +48,6 @@ export const NavLogo = styled(Link)`
   display: flex;
   align-items: center;
   p {
-    color: ${({ click }) => (click ? "#fff" : "#242424")};
     font-size: 1.5rem;
   }
 
@@ -59,13 +55,13 @@ export const NavLogo = styled(Link)`
     position: relative;
     right: 70px;
     color: #fff;
+    p {
+      font-size: 1.1rem;
+    }
   }
 `
 export const NavIcon = styled(GiAutoRepair)`
   margin-right: 0.5rem;
-  @media screen and (max-width: 991px) {
-    color: ${({ click }) => (click ? "#fff" : "#242424")};
-  }
 `
 
 export const NavMenu = styled.ul`

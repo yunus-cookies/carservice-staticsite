@@ -9,9 +9,8 @@ export const AboutSection = styled.div`
 
 export const AboutContainer = styled.div`
   width: 100%;
-  padding: 25px 100px 0 100px;
+  padding: 25px 100px 0 100px; // Remove padding on mobile
   max-width: 1440px;
-  border: 1px solid #242424;
   border-radius: 25px;
   text-align: center;
   h1 {
@@ -21,10 +20,11 @@ export const AboutContainer = styled.div`
   }
   p {
     line-height: 1.5;
-    width: 75%;
+    width: 80%;
     margin: 0 auto;
   }
   @media screen and (max-width: 991px) {
+    padding: 25px 50px 0 50px;
     p {
       width: 100%;
       font-size: 14px;
@@ -33,10 +33,10 @@ export const AboutContainer = styled.div`
 `
 
 export const ImageWrapper = styled.div`
-  width: 20%;
+  width: 25%;
   padding: 25px 50px 25px 50px;
   margin: 0 auto;
   @media screen and (max-width: 991px) {
-    width: 100%;
+    width: 75%;
   }
 `
