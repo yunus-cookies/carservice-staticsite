@@ -1,6 +1,11 @@
 import { useStaticQuery, graphql } from "gatsby"
 import React, { useEffect, useState } from "react"
-import { homeObjOne, homeObjTwo } from "../../utils/Data_ServiceSection"
+import {
+  homeObjOne,
+  homeObjTwo,
+  homeObjThree,
+  homeObjFour,
+} from "../../utils/Data_ServiceSection"
 import { Service__Section, ServiceContainer } from "./ServiceSectionElements"
 import Service from "./Service"
 
@@ -96,22 +101,22 @@ const ServiceSection = ({ handleMultipleOnClick }) => {
             image={data.placeholderImage2.childImageSharp.fluid}
           />
           <Service
-            ImgStart={homeObjOne.imgStart}
-            lightText={homeObjOne.lightText}
-            topline={homeObjOne.topLine}
-            headline={homeObjOne.headline}
-            description={homeObjOne.description}
-            buttonLabel={homeObjOne.buttonLabel}
+            ImgStart={homeObjThree.imgStart}
+            lightText={homeObjThree.lightText}
+            topline={homeObjThree.topLine}
+            headline={homeObjThree.headline}
+            description={homeObjThree.description}
+            buttonLabel={homeObjThree.buttonLabel}
             handleMultipleOnClick={handleMultipleOnClick}
             image={data.placeholderImage3.childImageSharp.fluid}
           />
           <Service
-            ImgStart={homeObjTwo.imgStart}
-            lightText={homeObjTwo.lightText}
-            topline={homeObjTwo.topLine}
-            headline={homeObjTwo.headline}
-            description={homeObjTwo.description}
-            buttonLabel={homeObjTwo.buttonLabel}
+            ImgStart={homeObjFour.imgStart}
+            lightText={homeObjFour.lightText}
+            topline={homeObjFour.topLine}
+            headline={homeObjFour.headline}
+            description={homeObjFour.description}
+            buttonLabel={homeObjFour.buttonLabel}
             handleMultipleOnClick={handleMultipleOnClick}
             styles={BOTTOM_STYLE}
             imgStyles={BOTTOM_IMG_STYLE}

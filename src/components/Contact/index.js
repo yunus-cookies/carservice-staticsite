@@ -17,9 +17,19 @@ import {
   InfoContainer,
   InfoBox,
   Spinner,
+  Checkboxes,
 } from "./ContactElements"
 
 const Contact = () => {
+  const [services, setServices] = useState([
+    { id: 1, value: "Optjek", isChecked: false },
+    { id: 2, value: "Dæk", isChecked: false },
+    { id: 3, value: "Motorfejl", isChecked: false },
+    { id: 4, value: "Interior", isChecked: false },
+    { id: 5, value: "Elektronik", isChecked: false },
+    { id: 6, value: "Andet", isChecked: false },
+  ])
+
   const [mail, setMail] = useState(false)
   const [phone, setPhone] = useState(false)
   const [address, setAddress] = useState(false)
@@ -69,6 +79,16 @@ const Contact = () => {
   }
   const handleTextChange = e => {
     setText(e.target.value)
+  }
+
+  const handleCheckElements = e => {
+    let updatedServices = services
+    updatedServices.forEach(service => {
+      if (service.value === e.target.value) {
+        service.isChecked = e.target.checked
+      }
+    })
+    setServices(updatedServices)
   }
 
   return (
@@ -141,6 +161,31 @@ const Contact = () => {
                   required
                 />
               </Group>
+              <p
+                style={{
+                  width: "90%",
+                  margin: "0 auto",
+                  fontSize: "1.5rem",
+                  marginBottom: "15px",
+                }}
+              >
+                Vælg ydelse/ydelser:
+              </p>
+              {services.map(service => {
+                return (
+                  <Checkboxes key={service.id}>
+                    <label htmlFor={service.value}>{service.value}</label>
+                    <input
+                      type="checkbox"
+                      defaultChecked={service.isChecked}
+                      onClick={handleCheckElements}
+                      style={{
+                        width: "max-content",
+                      }}
+                    />
+                  </Checkboxes>
+                )
+              })}
             </ContactWrapper>
             <ContactWrapper>
               <Group>

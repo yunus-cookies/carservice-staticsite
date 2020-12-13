@@ -9,7 +9,7 @@ export const AboutSection = styled.div`
 
 export const AboutContainer = styled.div`
   width: 100%;
-  padding: 25px 100px 0 100px; // Remove padding on mobile
+  padding: 25px 100px 0 100px;
   max-width: 1440px;
   border-radius: 25px;
   text-align: center;

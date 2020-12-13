@@ -18,6 +18,7 @@ import { Button } from "../ButtonElements"
 
 const Navbar = ({ handleMultipleOnClick }) => {
   const [click, setClick] = useState(false)
+  const [scroll, setScroll] = useState(false)
   const [button, setButton] = useState(true)
 
   const handleClick = () => setClick(!click)
@@ -30,12 +31,22 @@ const Navbar = ({ handleMultipleOnClick }) => {
       setButton(true)
     }
   }
+  const isScrolling = () => {
+    if (window.pageYOffset > 0) {
+      setScroll(true)
+    } else {
+      setScroll(false)
+    }
+  }
 
   useEffect(() => {
     showButton()
+    isScrolling()
     window.addEventListener("resize", showButton)
+    window.addEventListener("scroll", isScrolling)
     return () => {
       window.removeEventListener("resize", showButton)
+      window.removeEventListener("scroll", isScrolling)
     }
   }, [])
 
@@ -44,7 +55,7 @@ const Navbar = ({ handleMultipleOnClick }) => {
       <IconContext.Provider
         value={click ? { color: "#fff" } : { color: "#242424" }}
       >
-        <Nav isClick={click}>
+        <Nav isClick={click} isScroll={scroll}>
           <NavContainer container>
             <NavLogo to="/" onClick={closeMobileMenu}>
               <NavIcon />

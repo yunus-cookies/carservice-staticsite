@@ -8,7 +8,9 @@ const ServicesPage = () => {
     <>
       <Layout>
         <SEO title="Ydelser" />
-        <ServiceSection />
+        <div style={{ marginTop: "120px" }}>
+          <ServiceSection />
+        </div>
       </Layout>
     </>
   )

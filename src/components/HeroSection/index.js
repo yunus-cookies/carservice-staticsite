@@ -12,7 +12,7 @@ const HeroSection = () => {
     query {
       heroImage: file(relativePath: { eq: "hero.jpeg" }) {
         childImageSharp {
-          fluid(maxWidth: 4770) {
+          fluid(maxWidth: 4770, quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }

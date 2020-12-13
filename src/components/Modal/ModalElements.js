@@ -18,12 +18,12 @@ export const OpenModal = styled.div`
   animation-fill-mode: forwards;
   @keyframes openModal {
     0% {
-      background-color: rgb(240, 240, 240);
+      background-color: rgb(220, 220, 220);
       height: 0;
       width: 0;
     }
     50% {
-      background-color: rgb(240, 240, 240);
+      background-color: rgb(220, 220, 220);
       height: 1px;
       width: 100%;
     }
@@ -35,7 +35,7 @@ export const OpenModal = styled.div`
 `
 
 export const CloseModal = styled.div`
-  background: rgb(240, 240, 240);
+  background-color: rgb(220, 220, 220);
   overflow: hidden;
   position: fixed;
   top: 50%;

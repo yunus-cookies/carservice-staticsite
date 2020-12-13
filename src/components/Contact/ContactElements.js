@@ -126,6 +126,16 @@ export const Group = styled.div`
   display: flex;
   width: 100%;
 `
+export const Checkboxes = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+  input {
+    margin: 0 0 25px;
+    cursor: alias;
+  }
+`
 
 export const Input = styled.input`
   padding: 15px;

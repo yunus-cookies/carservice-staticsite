@@ -11,7 +11,7 @@ export const HeroImage = styled(BackgroundImage)`
 
 export const Overlay = styled.div`
   display: flex;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.25);
   height: 100%;
   width: 100%;
   justify-content: flex-start;
