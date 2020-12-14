@@ -17,7 +17,7 @@ const About = () => {
   `)
   return (
     <>
-      <AboutSection>
+      <AboutSection id="about">
         <AboutContainer>
           <h1>Om os</h1>
           <p>

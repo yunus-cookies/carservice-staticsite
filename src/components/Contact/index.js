@@ -90,7 +90,8 @@ const Contact = () => {
     })
     setServices(updatedServices)
   }
-
+  // Add counter for checkboxes. Atleast one has to be set.
+  // Add anchor links
   return (
     <>
       <InfoSection>

@@ -22,7 +22,6 @@ const Navbar = ({ handleMultipleOnClick }) => {
   const [button, setButton] = useState(true)
 
   const handleClick = () => setClick(!click)
-  const closeMobileMenu = () => setClick(false)
 
   const showButton = () => {
     if (window.innerWidth <= 991) {
@@ -34,6 +33,7 @@ const Navbar = ({ handleMultipleOnClick }) => {
   const isScrolling = () => {
     if (window.pageYOffset > 0) {
       setScroll(true)
+      setClick(false)
     } else {
       setScroll(false)
     }
@@ -57,7 +57,7 @@ const Navbar = ({ handleMultipleOnClick }) => {
       >
         <Nav isClick={click} isScroll={scroll}>
           <NavContainer container>
-            <NavLogo to="/" onClick={closeMobileMenu}>
+            <NavLogo to="/#home">
               <NavIcon />
               <p style={click ? { color: "#fff" } : { color: "#242424" }}>
                 A.J Autoservice
@@ -68,11 +68,14 @@ const Navbar = ({ handleMultipleOnClick }) => {
             </MobileIcon>
             <NavMenu isClick={click} active>
               <NavItem>
-                <NavLink to="/om">Om</NavLink>
-                {click}
+                <NavLink to="/#services" stripHash>
+                  Ydelser
+                </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/ydelser">Ydelser</NavLink>
+                <NavLink to="/#about" stripHash>
+                  Om
+                </NavLink>
               </NavItem>
               <NavButtonContainer>
                 {button ? (

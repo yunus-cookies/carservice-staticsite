@@ -1,4 +1,4 @@
-import { Link } from "gatsby"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 import { GiAutoRepair } from "react-icons/gi"
 import styled, { css } from "styled-components"
 
@@ -39,7 +39,7 @@ export const NavContainer = styled.div`
       padding-left: 100px;
     `}
 `
-export const NavLogo = styled(Link)`
+export const NavLogo = styled(AnchorLink)`
   color: #242424;
   justify-self: start;
   cursor: pointer;
@@ -117,7 +117,7 @@ export const NavButton = styled.div`
   width: 80%;
 `
 
-export const NavLink = styled(Link)`
+export const NavLink = styled(AnchorLink)`
   color: #242424;
   display: flex;
   align-items: center;

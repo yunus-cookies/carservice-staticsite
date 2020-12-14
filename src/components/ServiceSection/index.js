@@ -76,7 +76,7 @@ const ServiceSection = ({ handleMultipleOnClick }) => {
 
   return (
     <>
-      <Service__Section isBlueBg={homeObjTwo.blueBg}>
+      <Service__Section id="services" isBlueBg={homeObjTwo.blueBg}>
         <ServiceContainer>
           <Service
             ImgStart={homeObjOne.imgStart}

@@ -9,6 +9,8 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-portal`,
     `gatsby-background-image`,
+    `gatsby-plugin-anchor-links`,
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {

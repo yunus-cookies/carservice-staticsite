@@ -3,7 +3,7 @@ import styled, { css } from "styled-components"
 export const Service__Section = styled.div`
   color: #fff;
   ${props => props.isBlueBg && css``}
-  padding-bottom: 100px;
+  padding: 100px 0 100px 0;
 `
 
 export const ServiceContainer = styled.div`

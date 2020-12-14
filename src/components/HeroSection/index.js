@@ -12,7 +12,7 @@ const HeroSection = () => {
     query {
       heroImage: file(relativePath: { eq: "hero.jpeg" }) {
         childImageSharp {
-          fluid(maxWidth: 4770, quality: 100) {
+          fluid(maxWidth: 4774, quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -22,7 +22,7 @@ const HeroSection = () => {
 
   return (
     <>
-      <Home__HeroSection>
+      <Home__HeroSection id="home">
         <HeroImage fluid={data.heroImage.childImageSharp.fluid} fadeIn>
           <Overlay>
             <Content>
