@@ -111,7 +111,7 @@ const Contact = () => {
   const handleCheckElements = e => {
     let updatedServices = services
     updatedServices.forEach(service => {
-      if (service.value === e.target.value) {
+      if (Number(service.id) === Number(e.target.id)) {
         service.isChecked = e.target.checked
         setCheckObjChange(checkObjChange + 1)
       }
@@ -215,9 +215,10 @@ const Contact = () => {
                   <Checkboxes key={service.id}>
                     <label htmlFor={service.value}>{service.value}</label>
                     <input
-                      id={service.id}
                       type="checkbox"
-                      value={service.value}
+                      id={service.id}
+                      value="Ja"
+                      name={service.value}
                       defaultChecked={service.isChecked}
                       onClick={handleCheckElements}
                       style={{
