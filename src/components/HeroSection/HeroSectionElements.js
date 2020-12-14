@@ -2,7 +2,7 @@ import styled from "styled-components"
 import BackgroundImage from "gatsby-background-image"
 
 export const Home__HeroSection = styled.div`
-  padding: 120px 0 25px 0;
+  padding: 130px 0 25px 0;
   width: 100%;
 `
 export const HeroImage = styled(BackgroundImage)`

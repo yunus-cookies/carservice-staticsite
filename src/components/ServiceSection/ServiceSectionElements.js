@@ -97,6 +97,4 @@ export const Subtitle = styled.p`
 `
 export const ImgWrapper = styled.div`
   max-width: 100%;
-  @media screen and (max-width: 991px) {
-  }
 `

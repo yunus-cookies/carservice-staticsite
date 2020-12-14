@@ -47,12 +47,21 @@ export const InfoBox = styled.div`
   }
   @media screen and (max-width: 991px) {
     font-size: 2rem;
-    width: 150px;
+    width: 100%;
     height: 100px;
     p {
-      font-size: 1rem;
+      font-size: 1.4rem;
     }
   }
+`
+
+export const ErrorMessage = styled.p`
+  background-color: #f00946;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
 `
 
 export const Header = styled.div`
@@ -80,7 +89,7 @@ export const HeaderWrap = styled.div`
       font-size: 1rem;
     }
     h1 {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
   }
 `

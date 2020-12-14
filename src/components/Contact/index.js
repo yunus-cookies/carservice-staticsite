@@ -1,5 +1,5 @@
-import React, { useState } from "react"
-import { FaPhone, FaAddressBook } from "react-icons/fa"
+import React, { useState, useEffect, useRef } from "react"
+import { FaTimes, FaPhone, FaAddressBook } from "react-icons/fa"
 import { IoMdMail } from "react-icons/io"
 import {
   ContactSection,
@@ -18,67 +18,94 @@ import {
   InfoBox,
   Spinner,
   Checkboxes,
+  ErrorMessage,
 } from "./ContactElements"
 
 const Contact = () => {
-  const [services, setServices] = useState([
+  /** Init All services and inputs  */
+  const initialServices = [
     { id: 1, value: "Optjek", isChecked: false },
     { id: 2, value: "Dæk", isChecked: false },
     { id: 3, value: "Motorfejl", isChecked: false },
     { id: 4, value: "Interior", isChecked: false },
     { id: 5, value: "Elektronik", isChecked: false },
     { id: 6, value: "Andet", isChecked: false },
-  ])
+  ]
+  const initialInputs = {
+    name: "",
+    email: "",
+    number: "",
+    message: "",
+  }
 
+  /** ref each input box to watch if invalid or not (empty) */
+  const contactRef = useRef()
+
+  const [services, setServices] = useState(initialServices)
+  const [inputs, setInputs] = useState(initialInputs)
+
+  /** Since useeffect doesn't fire when nested object are changed
+   * I added a state to the useeffect to handle the gun fire.
+   */
+  const [checkObjChange, setCheckObjChange] = useState(0)
+
+  /** For infoboxes in contact */
   const [mail, setMail] = useState(false)
   const [phone, setPhone] = useState(false)
   const [address, setAddress] = useState(false)
 
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [number, setNumber] = useState("")
-  const [text, setText] = useState("")
-
+  /** Status and spinner for submit */
   const [status, setStatus] = useState("")
   const [spinner, setSpinner] = useState(false)
 
+  /** State for handling whether one or more checkbox is set or not */
+  const [oneCheckbox, setOneCheckbox] = useState(false)
+
+  /** State for handling error message if user input fields are missing */
+  const [showError, setShowError] = useState(false)
+
   const handleSubmit = e => {
     e.preventDefault()
-    setSpinner(true)
-    const form = e.target
-    const data = new FormData(form)
-    const xhr = new XMLHttpRequest()
-    xhr.open(form.method, form.action)
-    xhr.setRequestHeader("Accept", "application/json")
-    xhr.onreadystatechange = () => {
-      if (xhr.readyState !== XMLHttpRequest.DONE) return
-      if (xhr.status === 200) {
-        form.reset()
-        setStatus("SUCCESS")
-        setSpinner(false)
-        setName("")
-        setEmail("")
-        setNumber("")
-        setText("")
-      } else {
-        setStatus("ERROR")
-        setSpinner(false)
+    if (!oneCheckbox || !contactRef.current.value) {
+      setShowError(true)
+    } else {
+      setShowError(false)
+      setSpinner(true)
+      const form = e.target
+      const data = new FormData(form)
+      const xhr = new XMLHttpRequest()
+      xhr.open(form.method, form.action)
+      xhr.setRequestHeader("Accept", "application/json")
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState !== XMLHttpRequest.DONE) return
+        if (xhr.status === 200) {
+          form.reset()
+          setStatus("SUCCESS")
+          setSpinner(false)
+          setInputs(initialInputs)
+          setServices(initialServices)
+        } else {
+          setStatus("ERROR")
+          setSpinner(false)
+        }
       }
+      xhr.send(data)
     }
-    xhr.send(data)
   }
 
-  const handleNameChange = e => {
-    setName(e.target.value)
-  }
-  const handleEmailChange = e => {
-    setEmail(e.target.value)
-  }
-  const handleNumberChange = e => {
-    setNumber(e.target.value)
-  }
-  const handleTextChange = e => {
-    setText(e.target.value)
+  useEffect(() => {
+    services.some(service => service.isChecked)
+      ? setOneCheckbox(true)
+      : setOneCheckbox(false)
+  }, [services, checkObjChange])
+
+  /** [name] works as a dynamic key in object. */
+  const handleInputElements = e => {
+    const { name, value } = e.target
+    setInputs({
+      ...inputs,
+      [name]: value,
+    })
   }
 
   const handleCheckElements = e => {
@@ -86,12 +113,12 @@ const Contact = () => {
     updatedServices.forEach(service => {
       if (service.value === e.target.value) {
         service.isChecked = e.target.checked
+        setCheckObjChange(checkObjChange + 1)
       }
     })
     setServices(updatedServices)
   }
-  // Add counter for checkboxes. Atleast one has to be set.
-  // Add anchor links
+
   return (
     <>
       <InfoSection>
@@ -124,6 +151,17 @@ const Contact = () => {
         >
           <Header>
             <HeaderWrap>
+              {showError && (
+                <ErrorMessage>
+                  Et eller flere felter mangler
+                  <FaTimes
+                    onClick={() => setShowError(false)}
+                    style={{ cursor: "pointer" }}
+                  />
+                </ErrorMessage>
+              )}
+            </HeaderWrap>
+            <HeaderWrap>
               <h1>Vi vil meget gerne høre fra dig!</h1>
             </HeaderWrap>
             <HeaderWrap>
@@ -135,31 +173,31 @@ const Contact = () => {
               <Group>
                 <Input
                   type="text"
-                  value={name}
-                  onChange={handleNameChange}
-                  placeholder="Navn"
+                  value={inputs.name}
+                  onChange={handleInputElements}
+                  placeholder="Navn*"
                   name="name"
-                  required
+                  ref={contactRef}
                 />
               </Group>
               <Group>
                 <Input
                   type="email"
-                  value={email}
-                  onChange={handleEmailChange}
-                  placeholder="Email"
+                  value={inputs.email}
+                  onChange={handleInputElements}
+                  placeholder="Email*"
                   name="email"
-                  required
+                  ref={contactRef}
                 />
               </Group>
               <Group>
                 <Input
                   type="tel"
-                  value={number}
-                  onChange={handleNumberChange}
-                  placeholder="Nummer"
+                  value={inputs.number}
+                  onChange={handleInputElements}
+                  placeholder="Nummer*"
                   name="number"
-                  required
+                  ref={contactRef}
                 />
               </Group>
               <p
@@ -170,14 +208,16 @@ const Contact = () => {
                   marginBottom: "15px",
                 }}
               >
-                Vælg ydelse/ydelser:
+                Vælg ydelse/ydelser*:
               </p>
               {services.map(service => {
                 return (
                   <Checkboxes key={service.id}>
                     <label htmlFor={service.value}>{service.value}</label>
                     <input
+                      id={service.id}
                       type="checkbox"
+                      value={service.value}
                       defaultChecked={service.isChecked}
                       onClick={handleCheckElements}
                       style={{
@@ -191,11 +231,11 @@ const Contact = () => {
             <ContactWrapper>
               <Group>
                 <Textarea
-                  value={text}
-                  onChange={handleTextChange}
-                  placeholder="Skriv en besked"
+                  value={inputs.texts}
+                  onChange={handleInputElements}
+                  placeholder="Skriv en besked*"
                   name="message"
-                  required
+                  ref={contactRef}
                 />
               </Group>
               <Group>
