@@ -16,7 +16,7 @@ const Footer = () => {
           <FooterWrap>
             <FooterRights>
               Copyright © 2020 |{" "}
-              <WebsiteName to="/">
+              <WebsiteName to="/#home">
                 <Icon />
                 A.J Autoservice
               </WebsiteName>

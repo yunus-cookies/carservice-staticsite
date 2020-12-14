@@ -204,7 +204,7 @@ const Contact = () => {
                 style={{
                   width: "90%",
                   margin: "0 auto",
-                  fontSize: "1.5rem",
+                  fontSize: "1.3rem",
                   marginBottom: "15px",
                 }}
               >

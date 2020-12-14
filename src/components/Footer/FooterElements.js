@@ -1,4 +1,4 @@
-import { Link } from "gatsby"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 import { GiAutoRepair } from "react-icons/gi"
 import styled from "styled-components"
 
@@ -32,10 +32,6 @@ export const FooterRights = styled.small`
   transition: 0.5s;
   display: flex;
   align-items: center;
-  &:hover {
-    transform: scale(1.05);
-    transition: 0.5s;
-  }
   @media screen and (max-width: 820px) {
     margin-bottom: 10px;
   }
@@ -48,11 +44,16 @@ export const Icon = styled(GiAutoRepair)`
   margin-left: 5px;
 `
 
-export const WebsiteName = styled(Link)`
+export const WebsiteName = styled(AnchorLink)`
   margin: 5px 0;
   text-decoration: none;
   color: #fff;
   font-size: 1rem;
   display: flex;
   align-items: center;
+  transition: all 0.33s ease;
+  &:hover {
+    transform: scale(1.05);
+    transition: all 0.33s ease;
+  }
 `

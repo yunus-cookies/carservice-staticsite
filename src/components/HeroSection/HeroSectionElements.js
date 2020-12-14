@@ -29,6 +29,8 @@ export const Content = styled.div`
     color: #fff;
     font-weight: 400;
     font-size: 4rem;
+    border-bottom: 2px solid #fff;
+    width: max-content;
     margin-bottom: 20px;
   }
   p {
@@ -42,6 +44,7 @@ export const Content = styled.div`
     padding: 33px;
     margin: 0;
     h1 {
+      width: 100%;
       font-size: 2rem;
     }
   }

@@ -1,12 +1,23 @@
 import React, { useState, Children, cloneElement } from "react"
 import PropTypes from "prop-types"
-import "./layout.css"
+import { createGlobalStyle } from "styled-components"
 import Navbar from "./NavBar"
 import Footer from "./Footer"
 import { AnimatePresence, motion } from "framer-motion"
 import Portal from "./Portal.js"
 import Modal from "./Modal"
 import Contact from "./Contact"
+
+const GlobalStyle = createGlobalStyle`
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Courier New", monospace;
+  }
+`
 
 const Layout = ({ children }) => {
   const [open, setOpen] = useState(false)
@@ -27,6 +38,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <GlobalStyle />
       <AnimatePresence exitBeforeEnter>
         <motion.div
           initial={{ opacity: 0 }}

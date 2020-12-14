@@ -126,8 +126,6 @@ export const ContactForm = styled.form`
   background: #fff;
   padding: 25px;
   margin: 0 auto;
-  @media screen and (min-width: 991px) {
-  }
 `
 
 export const Group = styled.div`
@@ -171,6 +169,9 @@ export const Input = styled.input`
   }
   &:not(:placeholder-shown) {
     background-color: rgba(0, 0, 0, 0.3);
+  }
+  @media screen and (max-width: 991px) {
+    font-size: 1.5rem;
   }
 `
 
@@ -232,5 +233,8 @@ export const Textarea = styled.textarea`
   }
   &:not(:placeholder-shown) {
     background-color: rgba(0, 0, 0, 0.3);
+  }
+  @media screen and (max-width: 991px) {
+    font-size: 1.5rem;
   }
 `
