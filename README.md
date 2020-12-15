@@ -1,7 +1,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 
 <p>This is a small project build for a car mechanic company. It's build with Gatsbyjs, styled-components and a little framer-motion to help with some page animation. Also it's using formspree to handle the contact post request.</p>
-<p>So far the project is still in development, so their is still some redundant and unfinished code here and there. Bear with me. Otherwise download the rep and enjoy this bad boy.</p>
+<p>The project is still in development.</p>
 
 ## 🚀 How to run
 
@@ -10,20 +10,12 @@
     You need gatsby-cli and nodejs installed on your system to be able to run the below command.
 
     ```shell
-    Go to the root of the folder and run: npm install then gatsby develop.
+    Go to the root of the folder and run: npm install then gatsby develop. The site will be running in localhost:8000.
     ```
 
-2.  **Go to localhost**
+2.  **Alternative**
 
-    Navigate into your new site’s directory and start it up.
-
-    ```shell
-    After running the command, the site will be running in localhost:8000.
-    ```
-
-3.  **Alternative**
-
-    Simply click down below to see it in action. <br />
+    Simply click down below to see it live. <br />
     <a href="https://jolly-pebble-068342403.azurestaticapps.net/" target="_blank">Link to site</a>
 
 <!-- AUTO-GENERATED-CONTENT:END -->

@@ -28,6 +28,7 @@ export const InfoContainer = styled.div`
   justify-content: space-evenly;
   align-items: center;
   flex-direction: row;
+
   @media screen and (max-width: 991px) {
     flex-direction: column;
   }
@@ -45,6 +46,7 @@ export const InfoBox = styled.div`
     color: #fff;
     font-size: 2rem;
   }
+
   @media screen and (max-width: 991px) {
     font-size: 2rem;
     width: 100%;
@@ -83,6 +85,7 @@ export const HeaderWrap = styled.div`
     font-weight: 600;
     margin-bottom: 25px;
   }
+
   @media screen and (max-width: 991px) {
     width: 100%;
     p {
@@ -100,6 +103,7 @@ export const ContactSection = styled.div`
   place-items: center;
   width: 100%;
   height: 100%;
+
   @media screen and (max-width: 991px) {
     width: 100%;
     margin: 0 auto;
@@ -170,6 +174,7 @@ export const Input = styled.input`
   &:not(:placeholder-shown) {
     background-color: rgba(0, 0, 0, 0.3);
   }
+
   @media screen and (max-width: 991px) {
     font-size: 1.5rem;
   }
@@ -234,6 +239,7 @@ export const Textarea = styled.textarea`
   &:not(:placeholder-shown) {
     background-color: rgba(0, 0, 0, 0.3);
   }
+
   @media screen and (max-width: 991px) {
     font-size: 1.5rem;
   }

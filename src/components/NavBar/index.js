@@ -10,6 +10,7 @@ import {
   NavItem,
   NavLink,
   NavLogo,
+  LogoContainer,
   NavMenu,
   NavButtonContainer,
   NavButton,
@@ -52,27 +53,25 @@ const Navbar = ({ handleMultipleOnClick }) => {
 
   return (
     <>
-      <IconContext.Provider
-        value={click ? { color: "#fff" } : { color: "#242424" }}
-      >
+      <IconContext.Provider value={{ color: "#fff" }}>
         <Nav isClick={click} isScroll={scroll}>
           <NavContainer container>
-            <NavLogo to="/#home">
-              <NavIcon />
-              <p style={click ? { color: "#fff" } : { color: "#242424" }}>
-                A.J Autoservice
-              </p>
-            </NavLogo>
+            <LogoContainer onClick={() => setClick(false)}>
+              <NavLogo to="/#home">
+                <NavIcon />
+                <p>A.J Autoservice</p>
+              </NavLogo>
+            </LogoContainer>
             <MobileIcon onClick={handleClick}>
-              {click ? <FaTimes style={{ color: "#fff" }} /> : <RiMenu3Line />}
+              {click ? <FaTimes /> : <RiMenu3Line />}
             </MobileIcon>
-            <NavMenu isClick={click} active>
-              <NavItem>
+            <NavMenu isClick={click}>
+              <NavItem onClick={() => setClick(false)}>
                 <NavLink to="/#services" stripHash>
                   Ydelser
                 </NavLink>
               </NavItem>
-              <NavItem>
+              <NavItem onClick={() => setClick(false)}>
                 <NavLink to="/#about" stripHash>
                   Om
                 </NavLink>
@@ -80,18 +79,13 @@ const Navbar = ({ handleMultipleOnClick }) => {
               <NavButtonContainer>
                 {button ? (
                   <NavButton>
-                    <Button primary nav onClick={handleMultipleOnClick}>
+                    <Button outline nav onClick={handleMultipleOnClick}>
                       KONTAKT OS
                     </Button>
                   </NavButton>
                 ) : (
                   <NavButton>
-                    <Button
-                      outlineWhite
-                      mobile
-                      outlineNav
-                      onClick={handleMultipleOnClick}
-                    >
+                    <Button mobile onClick={handleMultipleOnClick}>
                       KONTAKT OS
                     </Button>
                   </NavButton>

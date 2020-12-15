@@ -1,26 +1,27 @@
 import styled from "styled-components"
 import BackgroundImage from "gatsby-background-image"
+import { motion } from "framer-motion"
 
 export const Home__HeroSection = styled.div`
-  padding: 130px 0 25px 0;
   width: 100%;
 `
 export const HeroImage = styled(BackgroundImage)`
-  height: 550px;
+  height: 100vh;
 `
 
 export const Overlay = styled.div`
   display: flex;
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.3);
   height: 100%;
   width: 100%;
   justify-content: flex-start;
+
   @media screen and (max-width: 991px) {
     display: grid;
     place-items: center;
   }
 `
-export const Content = styled.div`
+export const Content = styled(motion.div)`
   width: 50%;
   margin-top: 150px;
   margin-left: 100px;
@@ -35,7 +36,8 @@ export const Content = styled.div`
   }
   p {
     color: #fff;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    width: fit-content;
   }
 
   @media screen and (max-width: 991px) {
@@ -46,6 +48,10 @@ export const Content = styled.div`
     h1 {
       width: 100%;
       font-size: 2rem;
+    }
+    p {
+      width: 100%;
+      font-size: 1.2rem;
     }
   }
 `

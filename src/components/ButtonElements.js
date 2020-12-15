@@ -22,19 +22,7 @@ export const Button = styled.button`
       }
     `}
   ${props =>
-    props.outlineBlack &&
-    css`
-      background-color: transparent;
-      color: #242424;
-      padding: 8px 20px;
-      border: 1px solid #242424;
-      transition: all 0.3s ease-out;
-      &:hover {
-        border: 1px solid #f00946;
-      }
-    `}
-    ${props =>
-    props.outlineWhite &&
+    props.outline &&
     css`
       background-color: transparent;
       color: #fff;
@@ -43,28 +31,6 @@ export const Button = styled.button`
       transition: all 0.3s ease-out;
       &:hover {
         border: 1px solid #f00946;
-      }
-    `}
-  ${props =>
-    props.medium &&
-    css`
-      padding: 8px 20px;
-      font-size: 18px;
-      &:hover {
-        transition: all 0.3s ease-out;
-        background-color: #fff;
-        color: #242424;
-      }
-    `}
-    ${props =>
-    props.large &&
-    css`
-      padding: 12px 26px;
-      font-size: 20px;
-      &:hover {
-        transition: all 0.3s ease-out;
-        background-color: #fff;
-        color: #242424;
       }
     `}
   ${props =>
@@ -74,29 +40,15 @@ export const Button = styled.button`
       color: #fff;
       text-align: center;
       border-radius: 4px;
+      border: 1px solid #fff;
       width: 100%;
       text-decoration: none;
       font-size: 1.5rem;
       padding: 14px 20px;
       transition: all 0.3s ease-out;
       &:hover {
+        border: 1px solid #f00946;
         background-color: #f00946;
-      }
-    `}
-    ${props =>
-    props.outlineNav &&
-    css`
-      border: 1px solid #fff;
-    `}
-    ${props =>
-    props.wide &&
-    css`
-      padding: 12px 64px;
-      font-size: 20px;
-      &:hover {
-        color: #fff;
-        background-color: #f00946;
-        transition: all 0.2s ease-out;
       }
     `}
     ${props =>
@@ -108,6 +60,21 @@ export const Button = styled.button`
         color: #fff;
         background-color: #f00946;
         transition: all 0.2s ease-out;
+      }
+    `}
+    ${props =>
+    props.start &&
+    css`
+      padding: 12px 80px;
+      color: #fff;
+      font-size: 20px;
+      background-color: ${({ isImgStart }) =>
+        isImgStart ? "#242424" : "#26629f"};
+      &:hover {
+        color: #fff;
+        background-color: #f00946;
+        transition: all 0.2s ease-out;
+        transform: scale(1.03);
       }
     `}
 `

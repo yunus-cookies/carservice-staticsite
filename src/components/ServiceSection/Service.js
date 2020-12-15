@@ -13,7 +13,6 @@ import {
 
 const Service = ({
   handleMultipleOnClick,
-  lightText,
   topline,
   headline,
   description,
@@ -46,15 +45,19 @@ const Service = ({
       <ServiceSectionRow isImgStart={ImgStart} style={styles}>
         <ServiceSectionCol>
           <ServiceSectionWrapper>
-            <TopLine isLightText={lightText}>{topline}</TopLine>
-            <Heading isLightText={lightText}>{headline}</Heading>
-            <Subtitle isLightText={lightText}>{description}</Subtitle>
+            <TopLine>{topline}</TopLine>
+            <Heading>{headline}</Heading>
+            <Subtitle>{description}</Subtitle>
             {button ? (
-              <Button outlineWhite nav onClick={handleMultipleOnClick}>
+              <Button
+                isImgStart={ImgStart}
+                start="true"
+                onClick={handleMultipleOnClick}
+              >
                 {buttonLabel}
               </Button>
             ) : (
-              <Button mobile outlineWhite onClick={handleMultipleOnClick}>
+              <Button mobile onClick={handleMultipleOnClick}>
                 {buttonLabel}
               </Button>
             )}

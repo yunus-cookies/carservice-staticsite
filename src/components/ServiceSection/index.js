@@ -29,16 +29,16 @@ const ServiceSection = ({ handleMultipleOnClick }) => {
   }, [])
 
   const TOP_STYLE = {
-    borderRadius: "25px 25px 0 0",
+    borderRadius: "15px 15px 0 0",
   }
   const TOP_IMG_STYLE = {
-    borderRadius: resize ? "0 25px 0 0" : "0 0 0 0",
+    borderRadius: resize ? "0 15px 0 0" : "0 0 0 0",
   }
   const BOTTOM_STYLE = {
-    borderRadius: "0 0 25px 25px",
+    borderRadius: "0 0 15px 15px",
   }
   const BOTTOM_IMG_STYLE = {
-    borderRadius: resize ? "0 0 0 25px" : "0 0 25px 25px",
+    borderRadius: resize ? "0 0 0 15px" : "0 0 15px 15px",
   }
 
   const data = useStaticQuery(graphql`
@@ -76,11 +76,10 @@ const ServiceSection = ({ handleMultipleOnClick }) => {
 
   return (
     <>
-      <Service__Section id="services" isBlueBg={homeObjTwo.blueBg}>
+      <Service__Section id="services">
         <ServiceContainer>
           <Service
             ImgStart={homeObjOne.imgStart}
-            lightText={homeObjOne.lightText}
             topline={homeObjOne.topLine}
             headline={homeObjOne.headline}
             description={homeObjOne.description}
@@ -92,7 +91,6 @@ const ServiceSection = ({ handleMultipleOnClick }) => {
           />
           <Service
             ImgStart={homeObjTwo.imgStart}
-            lightText={homeObjTwo.lightText}
             topline={homeObjTwo.topLine}
             headline={homeObjTwo.headline}
             description={homeObjTwo.description}
@@ -102,7 +100,6 @@ const ServiceSection = ({ handleMultipleOnClick }) => {
           />
           <Service
             ImgStart={homeObjThree.imgStart}
-            lightText={homeObjThree.lightText}
             topline={homeObjThree.topLine}
             headline={homeObjThree.headline}
             description={homeObjThree.description}
@@ -112,7 +109,6 @@ const ServiceSection = ({ handleMultipleOnClick }) => {
           />
           <Service
             ImgStart={homeObjFour.imgStart}
-            lightText={homeObjFour.lightText}
             topline={homeObjFour.topLine}
             headline={homeObjFour.headline}
             description={homeObjFour.description}

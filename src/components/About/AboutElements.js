@@ -5,6 +5,9 @@ export const AboutSection = styled.div`
   display: grid;
   place-items: center;
   padding-bottom: 100px;
+  @media screen and (max-width: 991px) {
+    padding-bottom: 30px;
+  }
 `
 
 export const AboutContainer = styled.div`
@@ -23,6 +26,7 @@ export const AboutContainer = styled.div`
     width: 80%;
     margin: 0 auto;
   }
+
   @media screen and (max-width: 991px) {
     padding: 25px 50px 0 50px;
     p {
@@ -36,6 +40,7 @@ export const ImageWrapper = styled.div`
   width: 25%;
   padding: 25px 50px 25px 50px;
   margin: 0 auto;
+
   @media screen and (max-width: 991px) {
     width: 75%;
   }

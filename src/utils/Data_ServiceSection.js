@@ -1,7 +1,4 @@
 export const homeObjOne = {
-  blueBg: false,
-  lightText: true,
-  lightTextDesc: true,
   topLine: "Optjek",
   headline: "Hvad er galt med min bil?",
   description:
@@ -12,9 +9,6 @@ export const homeObjOne = {
 }
 
 export const homeObjTwo = {
-  blueBg: false,
-  lightText: true,
-  lightTextDesc: true,
   topLine: "Motorfejl",
   headline: "Få kontrolleret og repareret fejl og mangler",
   description: "Vi kan effektiv håndtere ethvert problem med din motor.",
@@ -24,9 +18,6 @@ export const homeObjTwo = {
 }
 
 export const homeObjThree = {
-  blueBg: false,
-  lightText: true,
-  lightTextDesc: true,
   topLine: "Elektronik",
   headline: "Overlad el til os",
   description:
@@ -37,9 +28,6 @@ export const homeObjThree = {
 }
 
 export const homeObjFour = {
-  blueBg: false,
-  lightText: true,
-  lightTextDesc: true,
   topLine: "Andet",
   headline: "Andet?",
   description:

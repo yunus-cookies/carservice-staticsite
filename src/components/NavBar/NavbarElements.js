@@ -3,10 +3,8 @@ import { GiAutoRepair } from "react-icons/gi"
 import styled, { css } from "styled-components"
 
 export const Nav = styled.nav`
-  background-color: #fff;
+  background-color: ${({ isScroll }) => (isScroll ? "#242424" : "transparent")};
   height: 80px;
-  box-shadow: ${({ isScroll }) =>
-    isScroll ? "0 2px 2px -2px rgba(0, 0, 0, 0.75)" : null};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,10 +13,11 @@ export const Nav = styled.nav`
   width: 100%;
   top: 0;
   z-index: 99;
-  transition: all 0.25s ease;
+  transition: all 0.5s ease;
 
   @media screen and (max-width: 991px) {
-    background-color: ${({ isClick }) => (isClick ? "#242424" : "#fff")};
+    background-color: ${({ isClick, isScroll }) =>
+      isClick || isScroll ? "#242424" : "transparent"};
   }
 `
 
@@ -26,7 +25,6 @@ export const NavContainer = styled.div`
   display: flex;
   justify-content: space-between;
   height: 80px;
-
   ${props =>
     props.container &&
     css`
@@ -39,6 +37,10 @@ export const NavContainer = styled.div`
       padding-left: 100px;
     `}
 `
+export const LogoContainer = styled.div`
+  display: flex;
+`
+
 export const NavLogo = styled(AnchorLink)`
   color: #242424;
   justify-self: start;
@@ -49,12 +51,12 @@ export const NavLogo = styled(AnchorLink)`
   align-items: center;
   p {
     font-size: 1.5rem;
+    color: #fff;
   }
 
   @media screen and (max-width: 991px) {
     position: relative;
     right: 70px;
-    color: #fff;
     p {
       font-size: 1.1rem;
     }
@@ -88,13 +90,12 @@ export const NavMenu = styled.ul`
 export const NavItem = styled.li`
   height: 80px;
   border-bottom: 2px solid transparent;
-
   &:hover {
     border-bottom: 2px solid #f00946;
   }
+
   @media screen and (max-width: 991px) {
     width: 100%;
-
     &:hover {
       border: none;
     }
@@ -118,7 +119,7 @@ export const NavButton = styled.div`
 `
 
 export const NavLink = styled(AnchorLink)`
-  color: #242424;
+  color: #fff;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -131,8 +132,6 @@ export const NavLink = styled(AnchorLink)`
     margin: 0 auto;
     display: table;
     transition: all 0.3s ease-out;
-    color: #fff;
-
     &:hover {
       color: #f00946;
       transform: scale(1.2);
