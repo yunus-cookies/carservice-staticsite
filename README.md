@@ -16,6 +16,6 @@
 2.  **Alternative**
 
     Simply click down below to see it live. <br />
-    <a href="https://jolly-pebble-068342403.azurestaticapps.net/" target="_blank">Link to site</a>
+    <a href="https://zealous-elion-1f8bd9.netlify.app/" target="_blank">Link to site</a>
 
 <!-- AUTO-GENERATED-CONTENT:END -->
